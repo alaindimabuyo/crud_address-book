@@ -52,7 +52,7 @@ router.post(
       //if theres a user check the password and use bcypt compare method
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) {
-        //if they dont math return a bad request
+        //if they dont match return a bad request
         return res.status(400).json({ msg: "Invalid Credentials" });
       }
       //if match return jwt sign payload
